@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/markelovalexdmi/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/markelovalexdmi/frontend-project-44#readme"
+  "homepage": "https://github.com/markelovalexdmi/frontend-project-44#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "bin": {
+  "brain-games": "bin/brain-games.js"
+}
 }
