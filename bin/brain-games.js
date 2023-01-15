@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-import playerName from "../src/cli.js";
-import evenOrNot from "./brain-even.js";
+import playerName from '../src/cli.js';
+import evenOrNot from './games/brain-even.js';
+import calculator from './games/brain-calculator.js';
 
-console.log("Welcome to the Brain Games!");
+console.log('Welcome to the Brain Games!');
 const name = playerName();
-evenOrNot(name);
+calculator(name);

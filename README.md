@@ -4,4 +4,4 @@
 
 <a href="https://codeclimate.com/github/markelovalexdmi/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/3d40e7d95135c7dc7312/maintainability" /></a>
 
-https://asciinema.org/a/eN2rFExMjTLLT93KbVBgwwmvN
+[Asxiinema link](https://asciinema.org/a/eN2rFExMjTLLT93KbVBgwwmvN)
