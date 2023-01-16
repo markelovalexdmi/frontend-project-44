@@ -1,11 +1,11 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
 const playerName = () => {
-  let nameInput = readlineSync.question("Dear Player, May I have your name? ");
+  let nameInput = readlineSync.question('Dear Player, May I have your name? ');
   if (nameInput.length === 0) {
-    nameInput = "Stranger";
+    nameInput = 'Stranger';
   }
-  console.log("Hello, " + nameInput + "!");
+  console.log(`Hello, ${nameInput}!`);
   return nameInput;
 };
 

@@ -1,7 +1,5 @@
 import readlineSync from 'readline-sync';
 
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
 const evenOrNot = (inputName) => {
   const minRandom = 1;
   const maxRandom = 20;
