@@ -1,4 +1,6 @@
 import readlineSync from 'readline-sync';
+import randomNumber from '../../src/random-number.js';
+import answer from '../../src/answer.js';
 
 const calculator = (inputName) => {
   const minRandom = 1;
@@ -8,60 +10,45 @@ const calculator = (inputName) => {
   const correctAnswerNum = 3;
 
   let correctAnswer;
-  let randomNumber1;
-  let randomNumber2;
+  let number1;
+  let number2;
   let randomSign;
   let userAnswer;
   let supportNumber;
+  let i = 1;
 
   console.log('What is the result of the expression?');
-  for (let i = 1; i <= correctAnswerNum; i += 1) {
-    randomSign = Math.round(
-      Math.random() * (maxRandomSign - minRandom) + minRandom,
-    );
-    randomNumber1 = Math.round(
-      Math.random() * (maxRandom - minRandom) + minRandom,
-    );
-    randomNumber2 = Math.round(
-      Math.random() * (maxRandom - minRandom) + minRandom,
-    );
+  while (i <= correctAnswerNum) {
+    randomSign = randomNumber(minRandom, maxRandomSign);
+    number1 = randomNumber(minRandom, maxRandom);
+    number2 = randomNumber(minRandom, maxRandom);
     switch (randomSign) {
       case 1:
-        console.log(`Expression: ${randomNumber1} + ${randomNumber2}`);
-        correctAnswer = randomNumber1 + randomNumber2;
+        console.log(`Expression: ${number1} + ${number2}`);
+        correctAnswer = number1 + number2;
         break;
       case 2:
-        if (randomNumber1 < randomNumber2) {
-          supportNumber = randomNumber1;
-          randomNumber1 = randomNumber2;
-          randomNumber2 = supportNumber;
+        if (number1 < number2) {
+          supportNumber = number1;
+          number1 = number2;
+          number2 = supportNumber;
         }
-        console.log(`Expression: ${randomNumber1} - ${randomNumber2}`);
-        correctAnswer = randomNumber1 - randomNumber2;
+        console.log(`Expression: ${number1} - ${number2}`);
+        correctAnswer = number1 - number2;
         break;
       default:
-        randomNumber2 = Math.round(
-          Math.random() * (maxRandomMultipl - minRandom) + minRandom,
-        );
-        console.log(`Expression: ${randomNumber1} * ${randomNumber2}`);
-        correctAnswer = randomNumber1 * randomNumber2;
+        number2 = randomNumber(minRandom, maxRandomMultipl);
+        console.log(`Expression: ${number1} * ${number2}`);
+        correctAnswer = number1 * number2;
         break;
     }
     userAnswer = readlineSync.question('Your answer: ');
-    userAnswer = Number(userAnswer);
-    if (correctAnswer !== userAnswer) {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
-      );
-      console.log(`Let's try again, ${inputName}!`);
-      return;
-    } if (correctAnswer === userAnswer && i !== correctAnswerNum) {
-      console.log('Correct!');
+    if (answer(correctAnswer, userAnswer, inputName) === true) {
+      i += 1;
     } else {
-      console.log('Correct!');
-      console.log(`Congratulations, ${inputName}!`);
       return;
     }
   }
+  console.log(`Congratulations, ${inputName}!`);
 };
 export default calculator;

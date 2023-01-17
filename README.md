@@ -7,3 +7,6 @@
 [Asxiinema link. This recording shows how the parity game works.](https://asciinema.org/a/eN2rFExMjTLLT93KbVBgwwmvN)
 
 [Asxiinema link. This recording shows how the game of determining the greatest common divisor works.](https://asciinema.org/a/pDbZViCZBVqlJQG5QmwE4ynDd)
+
+[Asxiinema link. This recording shows how the game of identifying a missing number in a progression works.](https://asciinema.org/a/qoD805BZ2l2Q2zs9GPuwZeb93)
+

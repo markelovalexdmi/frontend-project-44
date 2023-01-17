@@ -1,4 +1,6 @@
 import readlineSync from 'readline-sync';
+import randomNumber from '../../src/random-number.js';
+import answer from '../../src/answer.js';
 
 const evenOrNot = (inputName) => {
   const minRandom = 1;
@@ -6,30 +8,22 @@ const evenOrNot = (inputName) => {
   const correctAnswerNum = 3;
 
   let correctAnswer;
-  let randomNumber;
+  let number;
   let userAnswer;
+  let i = 1;
 
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  for (let i = 1; i <= correctAnswerNum; i += 1) {
-    randomNumber = Math.round(
-      Math.random() * (maxRandom - minRandom) + minRandom,
-    );
-    console.log(`Number: ${randomNumber}`);
+  while (i <= correctAnswerNum) {
+    number = randomNumber(minRandom, maxRandom);
+    console.log(`Number: ${number}`);
     userAnswer = readlineSync.question('Your answer: ');
-    correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
-    if (correctAnswer !== userAnswer) {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
-      );
-      console.log(`Let's try again, ${inputName}!`);
-      return;
-    } if (correctAnswer === userAnswer && i !== correctAnswerNum) {
-      console.log('Correct!');
+    correctAnswer = number % 2 === 0 ? 'yes' : 'no';
+    if (answer(correctAnswer, userAnswer, inputName) === true) {
+      i += 1;
     } else {
-      console.log('Correct!');
-      console.log(`Congratulations, ${inputName}!`);
       return;
     }
   }
+  console.log(`Congratulations, ${inputName}!`);
 };
 export default evenOrNot;
