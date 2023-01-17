@@ -1,5 +1,5 @@
 const answer = (correctAnswer, userAnswer, inputName) => {
-  if (typeof(correctAnswer) === 'number') {
+  if (typeof correctAnswer === 'number') {
     userAnswer = Number(userAnswer);
   }
   if (correctAnswer !== userAnswer) {

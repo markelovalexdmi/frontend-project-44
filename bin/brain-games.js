@@ -1,11 +1,11 @@
 #!/usr/bin/env node
+import readlineSync from 'readline-sync';
 import playerName from '../src/cli.js';
 import evenOrNot from './games/brain-even.js';
 import calculator from './games/brain-calculator.js';
 import gcd from './games/brain-gcd.js';
 import progression from './games/brain-progression.js';
 import primeOrNot from './games/brain-prime-number.js';
-import readlineSync from 'readline-sync';
 
 console.log('Welcome to the Brain Games!');
 const name = playerName();

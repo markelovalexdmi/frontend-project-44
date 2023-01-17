@@ -28,9 +28,9 @@ const progression = (inputName) => {
       if (j === randomPlace) {
         output = `${output} ..`;
         correctAnswer = number1 + number2;
-        number1 = number1 + number2;
+        number1 += number2;
       } else {
-        number1 = number1 + number2;
+        number1 += number2;
         output = `${output} ${number1.toString()}`;
       }
     }
