@@ -22,14 +22,13 @@ const gcd = (inputName) => {
 
     counter = number1 > number2 ? number2 : number1;
 
-    for (let j=1; j <= counter; j += 1) {
+    for (let j = 1; j <= counter; j += 1) {
       if (number1 % j === 0 && number2 % j === 0) {
         correctAnswer = j;
       }
     }
 
     if (correctAnswer === 1) {
-      i -= 1;
       continue;
     }
 

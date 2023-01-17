@@ -10,3 +10,5 @@
 
 [Asxiinema link. This recording shows how the game of identifying a missing number in a progression works.](https://asciinema.org/a/qoD805BZ2l2Q2zs9GPuwZeb93)
 
+[Asxiinema link. This recording shows how the game of determining a prime number works.](https://asciinema.org/a/kguxfDwZX1EQHU2blS5Ioqwku)
+
