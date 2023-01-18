@@ -1,4 +1,8 @@
-const answer = (correctAnswer, userAnswer, inputName) => {
+import readlineSync from 'readline-sync';
+
+const userReply = (correctAnswer, inputName) => {
+  let userAnswer = readlineSync.question('Your answer: ');
+
   if (typeof correctAnswer === 'number') {
     userAnswer = Number(userAnswer);
   }
@@ -12,4 +16,5 @@ const answer = (correctAnswer, userAnswer, inputName) => {
   console.log('Correct!');
   return true;
 };
-export default answer;
+
+export default userReply;

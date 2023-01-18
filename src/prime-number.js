@@ -5,7 +5,6 @@ const primeNumber = (maxNumber, primeOrNot) => {
   const arrayNotPrime = [1];
   let y = 1;
   let counter;
-  let i = 0;
   while (y < maxNumber) {
     y += 1;
     counter = 0;

@@ -1,9 +1,9 @@
-import readlineSync from 'readline-sync';
-import randomNumber from '../../src/random-number.js';
-import answer from '../../src/answer.js';
-import primeNumber from '../../src/prime-number.js';
+import userName from '../bin/brain-games.js';
+import userReply from '../src/index.js';
+import randomNumber from '../src/random-number.js';
+import primeNumber from '../src/prime-number.js';
 
-const primeOrNot = (inputName) => {
+const primeOrNot = () => {
   const minRandom = 1;
   const maxRandom = 100;
   const maxPrime = 2;
@@ -11,8 +11,6 @@ const primeOrNot = (inputName) => {
 
   let correctAnswer;
   let randomPrime;
-
-  let userAnswer;
   let i = 1;
 
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
@@ -21,23 +19,20 @@ const primeOrNot = (inputName) => {
     randomPrime = randomNumber(minRandom, maxPrime);
     switch (randomPrime) {
       case 1:
-        console.log(`Number: ${primeNumber(maxRandom, 1)}`);
+        console.log(`Question: ${primeNumber(maxRandom, 1)}`);
         correctAnswer = 'yes';
         break;
       default:
-        console.log(`Number: ${primeNumber(maxRandom, 2)}`);
+        console.log(`Question: ${primeNumber(maxRandom, 2)}`);
         correctAnswer = 'no';
         break;
     }
-
-    userAnswer = readlineSync.question('Your answer: ');
-    if (answer(correctAnswer, userAnswer, inputName) === true) {
+    if (userReply(correctAnswer, userName) === true) {
       i += 1;
     } else {
       return;
     }
   }
-  console.log(`Congratulations, ${inputName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
-
 export default primeOrNot;

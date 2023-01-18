@@ -1,8 +1,8 @@
-import readlineSync from 'readline-sync';
-import randomNumber from '../../src/random-number.js';
-import answer from '../../src/answer.js';
+import userName from '../bin/brain-games.js';
+import userReply from '../src/index.js';
+import randomNumber from '../src/random-number.js';
 
-const progression = (inputName) => {
+const progression = () => {
   const minRandom = 1;
   const maxRandom = 10;
   const maxRandomPlace = 10;
@@ -12,36 +12,34 @@ const progression = (inputName) => {
   let number1;
   let number2;
   let randomPlace;
-  let userAnswer;
+  let output;
   let i = 1;
 
-  console.log('What number is missing in the progression?');
+  console.log('What is the result of the expression?');
 
   while (i <= correctAnswerNum) {
     number1 = randomNumber(minRandom, maxRandom);
     number2 = randomNumber(minRandom, maxRandom);
     randomPlace = randomNumber(minRandom, maxRandomPlace);
+    output = '';
 
-    let output = number1.toString();
-
-    for (let j = 1; j < maxRandomPlace; j += 1) {
+    for (let j = 1; j <= maxRandomPlace; j += 1) {
       if (j === randomPlace) {
         output = `${output} ..`;
-        correctAnswer = number1 + number2;
+        correctAnswer = number1;
         number1 += number2;
       } else {
-        number1 += number2;
         output = `${output} ${number1.toString()}`;
+        number1 += number2;
       }
     }
-    console.log(output);
-    userAnswer = readlineSync.question('Your answer: ');
-    if (answer(correctAnswer, userAnswer, inputName) === true) {
+    console.log(`Question: ${output.trim()}`);
+    if (userReply(correctAnswer, userName) === true) {
       i += 1;
     } else {
       return;
     }
-    console.log(`Congratulations, ${inputName}!`);
   }
+  console.log(`Congratulations, ${userName}!`);
 };
 export default progression;
