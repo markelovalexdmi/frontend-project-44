@@ -13,7 +13,8 @@ const gcd = () => {
   let correctAnswer;
   let i = 1;
 
-  console.log('What is the result of the expression?');
+  console.log('Find the greatest common divisor of given numbers.');
+
   while (i <= correctAnswerNum) {
     number1 = randomNumber(minRandom, maxRandom);
     number2 = randomNumber(minRandom, maxRandom);

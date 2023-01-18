@@ -15,7 +15,7 @@ const progression = () => {
   let output;
   let i = 1;
 
-  console.log('What is the result of the expression?');
+  console.log('What number is missing in the progression?');
 
   while (i <= correctAnswerNum) {
     number1 = randomNumber(minRandom, maxRandom);
