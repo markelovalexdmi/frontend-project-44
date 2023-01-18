@@ -5,11 +5,13 @@
 
 ### Links to recordings with game examples:
 
-*[Even or not](https://asciinema.org/a/eN2rFExMjTLLT93KbVBgwwmvN)
+[Even or not](https://asciinema.org/a/0H3EcbFPaWioWGLqJoGO5vrDe)
 
-*[Determining the greatest common divisor](https://asciinema.org/a/pDbZViCZBVqlJQG5QmwE4ynDd)
+[Calculator](https://asciinema.org/a/uxitOxlHPEl49GqIXLyY3eMCm)
 
-*[Finding a missing number in a progression](https://asciinema.org/a/qoD805BZ2l2Q2zs9GPuwZeb93)
+[Determining the greatest common divisor](https://asciinema.org/a/onfYmvGxZ1HkxBErGOwMXYi4T)
 
-*[Determining a prime number](https://asciinema.org/a/kguxfDwZX1EQHU2blS5Ioqwku)
+[Finding a missing number in a progression](https://asciinema.org/a/QYMYsYEmB2WtuoVDcpb63u1W1)
+
+[Determining a prime number](https://asciinema.org/a/LDS8HOenDw06GZRsUrWId2sHh)
 
