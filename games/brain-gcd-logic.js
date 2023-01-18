@@ -26,9 +26,6 @@ const gcd = () => {
         correctAnswer = j;
       }
     }
-    if (correctAnswer === 1) {
-      continue;
-    }
     console.log(`Question: ${number1} ${number2}`);
     if (userReply(correctAnswer, userName) === true) {
       i += 1;
