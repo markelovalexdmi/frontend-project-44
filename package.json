@@ -2,8 +2,7 @@
   "name": "@hexlet/code",
   "type": "module",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/markelovalexdmi/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/markelovalexdmi/frontend-project-44/actions)",
-  "main": "index.js",
+  "description": "JavaScript project with a collection of mathematical text games",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -32,7 +31,6 @@
   "devDependencies": {
     "eslint": "^8.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.27.4",
-    "prettier": "^2.8.3"
+    "eslint-plugin-import": "^2.27.4"
   }
 }

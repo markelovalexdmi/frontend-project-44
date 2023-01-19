@@ -1,20 +1,46 @@
-import readlineSync from 'readline-sync';
+import userName from '../bin/brain-games.js';
+import isAnswerCorrect from './helpers/userAnswer.js';
+import showRules from './helpers/rules.js';
+import showCongratulations from './helpers/congratulations.js';
+import runEven from './games/brainEvenLogic.js';
+import runCalc from './games/brainCalcLogic.js';
+import runPrime from './games/brainPrimeLogic.js';
+import runGcd from './games/brainGcdLogic.js';
+import runProgress from './games/brainProgressLogic.js';
 
-const userReply = (correctAnswer, inputName) => {
-  let userAnswer = readlineSync.question('Your answer: ');
+const runBrainGames = (gameAbbrev) => {
+  const correctAnswerNum = 3;
+  let correctAnswer;
+  let i = 1;
 
-  if (typeof correctAnswer === 'number') {
-    userAnswer = Number(userAnswer);
+  showRules(gameAbbrev);
+
+  while (i <= correctAnswerNum) {
+    switch (gameAbbrev) {
+      case 'even':
+        correctAnswer = runEven();
+        break;
+      case 'calc':
+        correctAnswer = runCalc();
+        break;
+      case 'gcd':
+        correctAnswer = runGcd();
+        break;
+      case 'prime':
+        correctAnswer = runPrime();
+        break;
+      case 'progress':
+        correctAnswer = runProgress();
+        break;
+      default:
+        throw new Error(`Unknown order state: '${order.state}'!`);
+    }
+    if (isAnswerCorrect(correctAnswer, userName) === true) {
+      i += 1;
+    } else {
+      return;
+    }
   }
-  if (correctAnswer !== userAnswer) {
-    console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
-    );
-    console.log(`Let's try again, ${inputName}!`);
-    return false;
-  }
-  console.log('Correct!');
-  return true;
+  showCongratulations(userName);
 };
-
-export default userReply;
+export default runBrainGames;

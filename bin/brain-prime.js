@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import primeOrNot from '../games/brain-prime-logic.js';
+import runBrainGames from "../src/index.js";
 
-primeOrNot();
+runBrainGames('prime');

@@ -5,15 +5,15 @@
 
 This JavaScript project features a collection of text-based games, including:
 
-1. **Even or Not**: A game that determines whether a given number is even or odd.
+1. **Even or Not**: A user tries to determine whether a given number is even or odd.
 
-2. **Calculator**: A game that performs basic mathematical operations (addition, subtraction, multiplication, division) on two user-provided numbers.
+2. **Calculator**: A user tries to determine the result of mathematical operation (addition, subtraction, multiplication).
 
-3. **Greatest Common Divisor**: A game that finds the largest number that divides both the given numbers without leaving a remainder.
+3. **Greatest Common Divisor**: A user tries to determine the greatest common divisor of two numbers.
 
-4. **Missing Number in Progression**: A game that determines the missing number in an arithmetic progression.
+4. **Missing Number in Progression**: A user tries to determine the missing number in an arithmetic progression.
 
-5. **Prime Number**: A game that determines whether a given number is prime or not.
+5. **Prime Number**: A user tries to determine whether a given number is prime or not.
 
 All of these games provide a fun and interactive way for users to practice their math skills.
 
@@ -26,7 +26,7 @@ Here is a manual for using Brain Games project with text-based games:
 **Running the games**: To run the games, enter these commands at the command prompt: 
 * *brain-even* to start the **Even or Not**
 * *brain-calc* to start the **Calculator**
-* *brain-dcd* to start the **Greatest Common Divisor**
+* *brain-gcd* to start the **Greatest Common Divisor**
 * *brain-progression* to start the **Missing Number in Progression**
 * *brain-prime* to start the **Prime Number**
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import calculator from '../games/brain-calculator-logic.js';
+import runBrainGames from "../src/index.js";
 
-calculator();
+runBrainGames('calc');
