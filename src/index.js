@@ -33,7 +33,7 @@ const runBrainGames = (gameAbbrev) => {
         correctAnswer = runProgress();
         break;
       default:
-        throw new Error(`Unknown order state: '${order.state}'!`);
+        throw new Error(`Unknown order state: '${gameAbbrev}'!`);
     }
     if (isAnswerCorrect(correctAnswer, userName) === true) {
       i += 1;

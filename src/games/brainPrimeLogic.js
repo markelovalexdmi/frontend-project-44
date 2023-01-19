@@ -12,10 +12,9 @@ const runPrime = () => {
   const maxPrime = 2;
 
   let correctAnswer;
-  let randomPrime;
   let number;
 
-  randomPrime = generateRandomNum(minRandom, maxPrime);
+  const randomPrime = generateRandomNum(minRandom, maxPrime);
 
   switch (randomPrime) {
     case 1:
@@ -29,7 +28,7 @@ const runPrime = () => {
       correctAnswer = 'no';
       break;
     default:
-      throw new Error(`Unknown order state: '${order.state}'!`);
+      throw new Error(`Unknown order state: '${randomPrime}'!`);
   }
   return correctAnswer;
 };

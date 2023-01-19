@@ -4,15 +4,12 @@ const runGcd = () => {
   const minRandom = 1;
   const maxRandom = 100;
 
-  let number1;
-  let number2;
-  let counter;
   let correctAnswer;
 
-  number1 = generateRandomNum(minRandom, maxRandom);
-  number2 = generateRandomNum(minRandom, maxRandom);
+  const number1 = generateRandomNum(minRandom, maxRandom);
+  const number2 = generateRandomNum(minRandom, maxRandom);
 
-  counter = number1 > number2 ? number2 : number1;
+  const counter = number1 > number2 ? number2 : number1;
 
   console.log(`Question: ${number1} ${number2}`);
 

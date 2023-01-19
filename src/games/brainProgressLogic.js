@@ -7,14 +7,12 @@ const runProgress = () => {
 
   let correctAnswer;
   let number1;
-  let number2;
-  let randomPlace;
   let output;
 
   number1 = generateRandomNum(minRandom, maxRandom);
-  number2 = generateRandomNum(minRandom, maxRandom);
-  randomPlace = generateRandomNum(minRandom, maxRandomPlace);
   output = '';
+  const number2 = generateRandomNum(minRandom, maxRandom);
+  const randomPlace = generateRandomNum(minRandom, maxRandomPlace);
 
   for (let j = 1; j <= maxRandomPlace; j += 1) {
     if (j === randomPlace) {

@@ -11,14 +11,14 @@ const showRules = (gameAbbrev) => {
       break;
     case 'prime':
       console.log(
-        'Answer "yes" if given number is prime. Otherwise answer "no".'
+        'Answer "yes" if given number is prime. Otherwise answer "no".',
       );
       break;
     case 'progress':
       console.log('What number is missing in the progression?');
       break;
     default:
-      throw new Error(`Unknown order state: '${order.state}'!`);
+      throw new Error(`Unknown order state: '${gameAbbrev}'!`);
   }
 };
 export default showRules;

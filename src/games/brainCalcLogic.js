@@ -9,10 +9,8 @@ const runCalc = () => {
   let correctAnswer;
   let number1;
   let number2;
-  let randomSign;
 
-  randomSign = generateRandomNum(minRandom, maxRandomSign);
-  
+  const randomSign = generateRandomNum(minRandom, maxRandomSign);
   switch (randomSign) {
     case 1:
       number1 = generateRandomNum(minRandom, maxRandom);
@@ -33,7 +31,7 @@ const runCalc = () => {
       correctAnswer = number1 * number2;
       break;
     default:
-      throw new Error(`Unknown order state: '${order.state}'!`);
+      throw new Error(`Unknown order state: '${randomSign}'!`);
   }
   return correctAnswer;
 };
