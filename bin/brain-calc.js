@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
 import runBrainGames from '../src/index.js';
+import { runCalc, rules } from '../src/games/calc.js';
 
-runBrainGames('calc');
+runBrainGames(runCalc(), rules);
