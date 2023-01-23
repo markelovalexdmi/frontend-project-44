@@ -1,43 +1,26 @@
-import generateRandomNum from '../helpers/randomNumber.js';
-import generatePrimeArray from '../primeArray.js';
-import generateNotPrimeArray from '../notPrimeArray.js';
+import generateRandomNumber from '../helpers/randomNumber.js';
 
-const maxNumInArray = 100;
-const primeArray = generatePrimeArray(maxNumInArray);
-const notPrimeArray = generateNotPrimeArray(maxNumInArray);
-
-const getRandomPrime = () => {
-  const prime = ['prime', 'not prime'];
-  let question;
-  let number;
-  let correctAnswer;
-  const primeOrNot = prime[generateRandomNum(0, 1)];
-  switch (primeOrNot) {
-    case 'prime':
-      number = generateRandomNum(0, primeArray.length - 1);
-      question = primeArray[number];
-      correctAnswer = 'yes';
-      break;
-    case 'not prime':
-      number = generateRandomNum(0, notPrimeArray.length - 1);
-      question = notPrimeArray[number];
-      correctAnswer = 'no';
-      break;
-    default:
-      throw new Error(`Unknown order state: '${primeOrNot}'!`);
+const isPrime = (number) => {
+  if (number < 2) {
+    return false;
   }
-  const randomPrime = [question, correctAnswer];
-  return randomPrime;
+  for (let j = 2; j < number / 2; j += 1) {
+    if (number % j === 0) {
+      return false;
+    }
+  }
+  return true;
 };
 
-export const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+export const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 export const runPrime = () => {
-  const gameData = [];
+  const rounds = [];
   const correctAnswerNum = 3;
   for (let i = 0; i < correctAnswerNum; i += 1) {
-    gameData.push(getRandomPrime());
+    const number = generateRandomNumber(1, 100);
+    const correctAnswer = isPrime(number) ? 'yes' : 'no';
+    rounds.push([number, correctAnswer]);
   }
-  console.log(gameData);
-  return gameData;
+  return rounds;
 };

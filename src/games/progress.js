@@ -1,33 +1,28 @@
-import generateRandomNum from '../helpers/randomNumber.js';
+import generateRandomNumber from '../helpers/randomNumber.js';
 
-export const rules = 'What number is missing in the progression?';
+export const description = 'What number is missing in the progression?';
+
+const generateRandomProgression = () => {
+  const maxRandomPlace = 10;
+  const number2 = generateRandomNumber(1, 10);
+  const number1 = generateRandomNumber(1, 10);
+  const randomPlace = generateRandomNumber(1, maxRandomPlace);
+  const progression = [];
+  for (let j = 0; j < maxRandomPlace; j += 1) {
+    const auxiliaryValue = number1 + number2 * j;
+    progression.push(`${auxiliaryValue}`);
+  }
+  const correctAnswer = number1 + number2 * (randomPlace - 1);
+  progression[randomPlace - 1] = '..';
+  const output = [progression.join(' '), `${correctAnswer}`];
+  return output;
+};
 
 export const runProgress = () => {
-  const maxRandomPlace = 10;
-
-  let correctAnswer;
-  let number1;
-  let output;
-
-  const gameData = [];
+  const rounds = [];
   const correctAnswerNum = 3;
   for (let i = 0; i < correctAnswerNum; i += 1) {
-    number1 = generateRandomNum(1, 10);
-    output = '';
-    const number2 = generateRandomNum(1, 10);
-    const randomPlace = generateRandomNum(1, maxRandomPlace);
-    for (let j = 1; j <= maxRandomPlace; j += 1) {
-      if (j === randomPlace) {
-        output = `${output} ..`;
-        correctAnswer = number1;
-        number1 += number2;
-      } else {
-        output = `${output} ${number1.toString()}`;
-        number1 += number2;
-      }
-    }
-    gameData.push([output.trim(), correctAnswer]);
+    rounds.push(generateRandomProgression());
   }
-  console.log(gameData);
-  return gameData;
+  return rounds;
 };

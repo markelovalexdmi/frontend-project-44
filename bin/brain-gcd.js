@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
 import runBrainGames from '../src/index.js';
-import { runGcd, rules } from '../src/games/gcd.js';
+import { runGcd, description } from '../src/games/gcd.js';
 
-runBrainGames(runGcd(), rules);
+runBrainGames(runGcd(), description);
