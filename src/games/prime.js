@@ -1,4 +1,7 @@
 import generateRandomNumber from '../helpers/randomNumber.js';
+import runBrainGames from '../index.js';
+
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
   if (number < 2) {
@@ -12,15 +15,24 @@ const isPrime = (number) => {
   return true;
 };
 
-export const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const round = () => {
+  const number = generateRandomNumber(1, 100);
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+  const output = [number, correctAnswer];
+  return output;
+};
 
-export const runPrime = () => {
+const generateRounds = () => {
   const rounds = [];
-  const correctAnswerNum = 3;
-  for (let i = 0; i < correctAnswerNum; i += 1) {
-    const number = generateRandomNumber(1, 100);
-    const correctAnswer = isPrime(number) ? 'yes' : 'no';
-    rounds.push([number, correctAnswer]);
+  const correctAnswersNumber = 3;
+  for (let i = 0; i < correctAnswersNumber; i += 1) {
+    rounds.push(round());
   }
   return rounds;
 };
+
+const runPrime = () => {
+  runBrainGames(generateRounds(), description);
+};
+
+export default runPrime;

@@ -1,8 +1,9 @@
 import generateRandomNumber from '../helpers/randomNumber.js';
+import runBrainGames from '../index.js';
 
-export const description = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
-const generateRandomProgression = () => {
+const round = () => {
   const maxRandomPlace = 10;
   const number2 = generateRandomNumber(1, 10);
   const number1 = generateRandomNumber(1, 10);
@@ -18,11 +19,17 @@ const generateRandomProgression = () => {
   return output;
 };
 
-export const runProgress = () => {
+const generateRounds = () => {
   const rounds = [];
-  const correctAnswerNum = 3;
-  for (let i = 0; i < correctAnswerNum; i += 1) {
-    rounds.push(generateRandomProgression());
+  const correctAnswersNumber = 3;
+  for (let i = 0; i < correctAnswersNumber; i += 1) {
+    rounds.push(round());
   }
   return rounds;
 };
+
+const runProgress = () => {
+  runBrainGames(generateRounds(), description);
+};
+
+export default runProgress;

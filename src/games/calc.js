@@ -1,31 +1,47 @@
 import generateRandomNumber from '../helpers/randomNumber.js';
+import runBrainGames from '../index.js';
 
-export const description = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
-const expressionFromString = (number1, number2, randomSign) => {
-  const output = eval(`${number1} ${randomSign} ${number2}`);
-  return output;
+const calculateAnswer = (number1, number2, randomSign) => {
+  switch (randomSign) {
+    case '+':
+      return number1 + number2;
+    case '-':
+      return number1 - number2;
+    case '*':
+      return number1 * number2;
+    default:
+      throw new Error(`Unknown order state: '${randomSign}'!`);
+  }
 };
 
-const getRandomExpression = () => {
+const round = () => {
   const signs = ['+', '-', '*'];
   const maxInArray = 2;
   const number1 = generateRandomNumber(1, 100);
   const number2 = generateRandomNumber(1, 100);
   const randomSign = signs[generateRandomNumber(0, maxInArray)];
-  const correctAnswer = expressionFromString(number1, number2, randomSign);
-  const randomExpr = [
+  const correctAnswer = calculateAnswer(number1, number2, randomSign);
+
+  const output = [
     `${number1} ${randomSign} ${number2}`,
     `${correctAnswer}`,
   ];
-  return randomExpr;
+  return output;
 };
 
-export const runCalc = () => {
+const generateRounds = () => {
   const rounds = [];
-  const correctAnswerNum = 3;
-  for (let i = 0; i < correctAnswerNum; i += 1) {
-    rounds.push(getRandomExpression());
+  const correctAnswersNumber = 3;
+  for (let i = 0; i < correctAnswersNumber; i += 1) {
+    rounds.push(round());
   }
   return rounds;
 };
+
+const runCalc = () => {
+  runBrainGames(generateRounds(), description);
+};
+
+export default runCalc;
