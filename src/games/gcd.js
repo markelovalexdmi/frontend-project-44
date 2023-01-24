@@ -10,19 +10,18 @@ const calculateGcd = (number1, number2) => {
   return calculateGcd(number2, number1 % number2);
 };
 
-const round = () => {
+const generateRound = () => {
   const number1 = generateRandomNumber(1, 100);
   const number2 = generateRandomNumber(1, 100);
-  const correctAnswer = calculateGcd(number1, number2);
-  const output = [`${number1} ${number2}`, `${correctAnswer}`];
-  return output;
+  const answer = calculateGcd(number1, number2);
+  return [`${number1} ${number2}`, answer.toString()];
 };
 
 const generateRounds = () => {
   const rounds = [];
-  const correctAnswersNumber = 3;
-  for (let i = 0; i < correctAnswersNumber; i += 1) {
-    rounds.push(round());
+  const roundsCount = 3;
+  for (let i = 0; i < roundsCount; i += 1) {
+    rounds.push(generateRound());
   }
   return rounds;
 };

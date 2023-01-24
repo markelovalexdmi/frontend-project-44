@@ -5,18 +5,17 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 const isEven = (number) => number % 2 === 0;
 
-const round = () => {
+const generateRound = () => {
   const number = generateRandomNumber(1, 100);
-  const correctAnswer = isEven(number) ? 'yes' : 'no';
-  const output = [number, correctAnswer];
-  return output;
+  const answer = isEven(number) ? 'yes' : 'no';
+  return [number, answer];
 };
 
 const generateRounds = () => {
   const rounds = [];
-  const correctAnswersNumber = 3;
-  for (let i = 0; i < correctAnswersNumber; i += 1) {
-    rounds.push(round());
+  const roundsCount = 3;
+  for (let i = 0; i < roundsCount; i += 1) {
+    rounds.push(generateRound());
   }
   return rounds;
 };

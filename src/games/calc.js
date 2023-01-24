@@ -3,8 +3,8 @@ import runBrainGames from '../index.js';
 
 const description = 'What is the result of the expression?';
 
-const calculateAnswer = (number1, number2, randomSign) => {
-  switch (randomSign) {
+const calculate = (number1, number2, operator) => {
+  switch (operator) {
     case '+':
       return number1 + number2;
     case '-':
@@ -12,30 +12,26 @@ const calculateAnswer = (number1, number2, randomSign) => {
     case '*':
       return number1 * number2;
     default:
-      throw new Error(`Unknown order state: '${randomSign}'!`);
+      throw new Error(`Unknown order state: '${operator}'!`);
   }
 };
 
-const round = () => {
-  const signs = ['+', '-', '*'];
-  const maxInArray = 2;
+const generateRound = () => {
+  const operators = ['+', '-', '*'];
+  const numberOfOperators = operators.lengt;
   const number1 = generateRandomNumber(1, 100);
   const number2 = generateRandomNumber(1, 100);
-  const randomSign = signs[generateRandomNumber(0, maxInArray)];
-  const correctAnswer = calculateAnswer(number1, number2, randomSign);
+  const operator = operators[generateRandomNumber(0, numberOfOperators - 1)];
+  const answer = calculate(number1, number2, operator);
 
-  const output = [
-    `${number1} ${randomSign} ${number2}`,
-    `${correctAnswer}`,
-  ];
-  return output;
+  return [`${number1} ${operator} ${number2}`, answer.toString()];
 };
 
 const generateRounds = () => {
   const rounds = [];
-  const correctAnswersNumber = 3;
-  for (let i = 0; i < correctAnswersNumber; i += 1) {
-    rounds.push(round());
+  const roundsCount = 3;
+  for (let i = 0; i < roundsCount; i += 1) {
+    rounds.push(generateRound());
   }
   return rounds;
 };

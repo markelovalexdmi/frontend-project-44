@@ -15,18 +15,17 @@ const isPrime = (number) => {
   return true;
 };
 
-const round = () => {
+const generateRound = () => {
   const number = generateRandomNumber(1, 100);
-  const correctAnswer = isPrime(number) ? 'yes' : 'no';
-  const output = [number, correctAnswer];
-  return output;
+  const answer = isPrime(number) ? 'yes' : 'no';
+  return [number, answer];
 };
 
 const generateRounds = () => {
   const rounds = [];
-  const correctAnswersNumber = 3;
-  for (let i = 0; i < correctAnswersNumber; i += 1) {
-    rounds.push(round());
+  const roundsCount = 3;
+  for (let i = 0; i < roundsCount; i += 1) {
+    rounds.push(generateRound());
   }
   return rounds;
 };

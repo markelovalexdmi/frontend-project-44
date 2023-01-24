@@ -1,17 +1,18 @@
 import readlineSync from 'readline-sync';
-import userName from '../bin/brain-games.js';
+import welcome from './cli.js';
 
 const runBrainGames = (rounds, description) => {
+  const userName = welcome();
   console.log(description);
 
   // eslint-disable-next-line no-restricted-syntax
-  for (const [question, correctAnswer] of rounds) {
+  for (const [question, answer] of rounds) {
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (correctAnswer !== userAnswer) {
+    if (answer !== userAnswer) {
       console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`,
       );
       console.log(`Let's try again, ${userName}!`);
       return;
