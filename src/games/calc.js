@@ -18,7 +18,7 @@ const calculate = (number1, number2, operator) => {
 
 const generateRound = () => {
   const operators = ['+', '-', '*'];
-  const numberOfOperators = operators.lengt;
+  const numberOfOperators = operators.length;
   const number1 = generateRandomNumber(1, 100);
   const number2 = generateRandomNumber(1, 100);
   const operator = operators[generateRandomNumber(0, numberOfOperators - 1)];
