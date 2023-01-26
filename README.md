@@ -37,17 +37,17 @@ Enjoy!
 ## Records with game examples
 
 ### Even or Not
-[![asciicast](https://asciinema.org/a/0H3EcbFPaWioWGLqJoGO5vrDe.svg)](https://asciinema.org/a/0H3EcbFPaWioWGLqJoGO5vrDe)
+[![asciicast](https://asciinema.org/a/D8aCo39RN5JCqwzBVhGUEMeNB.svg)](https://asciinema.org/a/D8aCo39RN5JCqwzBVhGUEMeNB)
 
 ### Calculator
-[![asciicast](https://asciinema.org/a/uxitOxlHPEl49GqIXLyY3eMCm.svg)](https://asciinema.org/a/uxitOxlHPEl49GqIXLyY3eMCm)
+[![asciicast](https://asciinema.org/a/93h09GPlZwibT9v5tGsVx2zAF.svg)](https://asciinema.org/a/93h09GPlZwibT9v5tGsVx2zAF)
 
 ### Greatest Common Divisor
-[![asciicast](https://asciinema.org/a/onfYmvGxZ1HkxBErGOwMXYi4T.svg)](https://asciinema.org/a/onfYmvGxZ1HkxBErGOwMXYi4T)
+[![asciicast](https://asciinema.org/a/3Icn0LU0DrK1JNbdWFzJJNrJ2.svg)](https://asciinema.org/a/3Icn0LU0DrK1JNbdWFzJJNrJ2)
 
 ### Missing Number in Progression
-[![asciicast](https://asciinema.org/a/QYMYsYEmB2WtuoVDcpb63u1W1.svg)](https://asciinema.org/a/QYMYsYEmB2WtuoVDcpb63u1W1)
+[![asciicast](https://asciinema.org/a/J5Cgfe59upPRR4SqffE7rhcJE.svg)](https://asciinema.org/a/J5Cgfe59upPRR4SqffE7rhcJE)
 
 ### Prime Number
-[![asciicast](https://asciinema.org/a/LDS8HOenDw06GZRsUrWId2sHh.svg)](https://asciinema.org/a/LDS8HOenDw06GZRsUrWId2sHh)
+[![asciicast](https://asciinema.org/a/5InT7RNeSnv0T5zRnmzrwpRHu.svg)](https://asciinema.org/a/5InT7RNeSnv0T5zRnmzrwpRHu)
 

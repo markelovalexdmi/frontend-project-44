@@ -6,13 +6,9 @@ const runBrainGames = (generateRound, description) => {
   console.log(`Hello, ${userName}!`);
   console.log(description);
 
-  const rounds = [];
   const roundsCount = 3;
   for (let i = 0; i < roundsCount; i += 1) {
-    rounds.push(generateRound());
-  }
-  // eslint-disable-next-line no-restricted-syntax
-  for (const [question, answer] of rounds) {
+    const [question, answer] = generateRound();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
