@@ -17,17 +17,8 @@ const generateRound = () => {
   return [`${number1} ${number2}`, answer.toString()];
 };
 
-const generateRounds = () => {
-  const rounds = [];
-  const roundsCount = 3;
-  for (let i = 0; i < roundsCount; i += 1) {
-    rounds.push(generateRound());
-  }
-  return rounds;
-};
-
 const runGcd = () => {
-  runBrainGames(generateRounds(), description);
+  runBrainGames(generateRound, description);
 };
 
 export default runGcd;

@@ -3,37 +3,28 @@ import runBrainGames from '../index.js';
 
 const description = 'What number is missing in the progression?';
 
-const generateProgression = (number1, number2, progressionLength) => {
+const generateProgression = (beginningNumber, progressionStep, length) => {
   const progression = [];
-  for (let j = 0; j < progressionLength; j += 1) {
-    const auxiliaryValue = number1 + number2 * j;
+  for (let j = 0; j < length; j += 1) {
+    const auxiliaryValue = beginningNumber + progressionStep * j;
     progression.push(`${auxiliaryValue}`);
   }
   return progression;
 };
 
 const generateRound = () => {
-  const progressionLength = 10;
-  const number2 = generateRandomNumber(1, 10);
-  const number1 = generateRandomNumber(1, 10);
-  const hiddenIndex = generateRandomNumber(1, progressionLength);
-  const progression = generateProgression(number1, number2, progressionLength);
-  const answer = number1 + number2 * (hiddenIndex - 1);
+  const length = 10;
+  const beginningNumber = generateRandomNumber(1, 10);
+  const progressionStep = generateRandomNumber(1, 10);
+  const hiddenIndex = generateRandomNumber(1, length);
+  const progression = generateProgression(beginningNumber, progressionStep, length);
+  const answer = beginningNumber + progressionStep * (hiddenIndex - 1);
   progression[hiddenIndex - 1] = '..';
   return [progression.join(' '), answer.toString()];
 };
 
-const generateRounds = () => {
-  const rounds = [];
-  const roundsCount = 3;
-  for (let i = 0; i < roundsCount; i += 1) {
-    rounds.push(generateRound());
-  }
-  return rounds;
-};
-
 const runProgress = () => {
-  runBrainGames(generateRounds(), description);
+  runBrainGames(generateRound, description);
 };
 
 export default runProgress;

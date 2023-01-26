@@ -1,10 +1,16 @@
 import readlineSync from 'readline-sync';
-import welcome from './cli.js';
 
-const runBrainGames = (rounds, description) => {
-  const userName = welcome();
+const runBrainGames = (generateRound, description) => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   console.log(description);
 
+  const rounds = [];
+  const roundsCount = 3;
+  for (let i = 0; i < roundsCount; i += 1) {
+    rounds.push(generateRound());
+  }
   // eslint-disable-next-line no-restricted-syntax
   for (const [question, answer] of rounds) {
     console.log(`Question: ${question}`);

@@ -18,26 +18,16 @@ const calculate = (number1, number2, operator) => {
 
 const generateRound = () => {
   const operators = ['+', '-', '*'];
-  const numberOfOperators = operators.length;
   const number1 = generateRandomNumber(1, 100);
   const number2 = generateRandomNumber(1, 100);
-  const operator = operators[generateRandomNumber(0, numberOfOperators - 1)];
+  const operator = operators[generateRandomNumber(0, operators.length - 1)];
   const answer = calculate(number1, number2, operator);
 
   return [`${number1} ${operator} ${number2}`, answer.toString()];
 };
 
-const generateRounds = () => {
-  const rounds = [];
-  const roundsCount = 3;
-  for (let i = 0; i < roundsCount; i += 1) {
-    rounds.push(generateRound());
-  }
-  return rounds;
-};
-
 const runCalc = () => {
-  runBrainGames(generateRounds(), description);
+  runBrainGames(generateRound, description);
 };
 
 export default runCalc;
